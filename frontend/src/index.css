@@ -1,0 +1,120 @@
+:root {
+  --brand-blue: #1565c0;
+  --brand-blue-dark: #0d3f7a;
+  --brand-blue-light: #e8f1fc;
+}
+
+body {
+  background-color: #f4f7fb;
+}
+
+.navbar-brand img {
+  height: 42px;
+  margin-right: 10px;
+}
+
+.btn-brand {
+  background-color: var(--brand-blue);
+  border-color: var(--brand-blue);
+  color: #fff;
+}
+.btn-brand:hover {
+  background-color: var(--brand-blue-dark);
+  border-color: var(--brand-blue-dark);
+  color: #fff;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--brand-blue-dark), var(--brand-blue));
+  color: #fff;
+  padding: 60px 0;
+}
+
+.resource-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+}
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.cover-placeholder {
+  height: 180px;
+  background-color: var(--brand-blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-blue);
+  font-size: 2.5rem;
+}
+
+.badge-role {
+  text-transform: capitalize;
+}
+
+.sidebar-link.active {
+  background-color: var(--brand-blue-light);
+  color: var(--brand-blue-dark);
+  font-weight: 600;
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 0px);
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .sidebar-sticky {
+    min-height: calc(100vh - 70px);
+  }
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 40px 0;
+  }
+  .hero-section h1 {
+    font-size: 1.6rem;
+  }
+  .navbar-brand span {
+    font-size: 0.95rem;
+  }
+  .card-body h4 {
+    font-size: 1.25rem;
+  }
+  table {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+}
+
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improves the mammoth.js docx fallback viewer's fidelity for common
+   cover-page patterns (centered logo + centered institution/title headings)
+   without needing LibreOffice. This is a best-effort heuristic - mammoth
+   strips most direct/manual paragraph formatting by design, so arbitrary
+   manually-centered body text still can't be fully recovered this way; only
+   the LibreOffice conversion path guarantees byte-for-byte original layout. */
+.docx-viewer img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.docx-viewer h1,
+.docx-viewer h2,
+.docx-viewer h3 {
+  text-align: center;
+}
